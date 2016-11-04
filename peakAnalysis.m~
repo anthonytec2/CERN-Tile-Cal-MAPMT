@@ -1,0 +1,20 @@
+function [cpp] = peakAnalysis(data, oldData )
+
+[loc,pks]=findpeaks(oldData,'MinPeakHeight',mean(oldData),'MinPeakDistance',6);
+cpp=zeros(8,8,length(pks));
+for i=1:length(pks)
+   for j=1:8
+      for k=1:8
+        [locD pksD]=findpeaks(squeeze(data(j,k,:)),'MinPeakHeight',mean(squeeze(data(j,k,:)))+20,'MinPeakDistance',6);  
+        for z=1:length(pksD)
+           if(pks(i)-5<pksD(z)&&pks) 
+            
+        end
+      end
+       
+   end
+    
+end
+
+end
+

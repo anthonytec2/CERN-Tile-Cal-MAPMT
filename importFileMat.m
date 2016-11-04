@@ -5,7 +5,7 @@ function [A,Acrop,old,cropOld] = importFileMat(filename, mapF)
 %Acrop has a cropping defined based on the max value
 %Old is the old PMT daa
 %cropOld is the same cropping from A crop applied to old
-if(mod(str2double(filename(8:12)),2)==0)
+if(mod(str2double(filename(8:12)),2)==0)%8-12 is the file name number
    EO=1; 
     
 else
