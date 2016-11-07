@@ -1,10 +1,16 @@
 function bestReconstruction(cpp, oldData, data)
-[row col]=find(max(max(cpp(:,:,1)))==cpp(:,:,1));
-sumA=squeeze(data(row,col,:));
-
+[row col]=find(cpp(:,:,1)>0.1);
+sumA=squeeze(data(row(1),col(1),:));
+if(length(row)>1)
+    for i=1:length(row)
+        sumA=sumA+squeeze(data(row(i),col(i),:));
+    end
+end
 for z=2:length(cpp(1,1,:))
-[row col]=find(max(max(cpp(:,:,z)))==cpp(:,:,z));
-sumA=sumA+squeeze(data(row,col,:));
+[row col]=find(cpp(:,:,1)>0.1);
+    for i=1:length(row)
+        sumA=sumA+squeeze(data(row(i),col(i),:));
+    end
 end
 subplot(1,2,1)
 plot(sumA);

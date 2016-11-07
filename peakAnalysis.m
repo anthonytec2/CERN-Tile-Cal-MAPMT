@@ -13,7 +13,7 @@ cpp=zeros(8,8,length(pks));
 for i=1:length(pks)
    for j=1:8
       for k=1:8
-        [locD pksD]=findpeaks(squeeze(data(k,j,:)),'MinPeakHeight',mean(squeeze(data(k,j,:)))+20,'MinPeakDistance',6);  
+        [locD pksD]=findpeaks(squeeze(data(k,j,:)),'MinPeakHeight',mean(squeeze(data(k,j,:))),'MinPeakDistance',6);  
         for z=1:length(pksD)
            if(pks(i)-5<pksD(z)&&pksD(z)<pks(i)+5) 
             cpp(j,k,i)=locD(z)/loc(i);
