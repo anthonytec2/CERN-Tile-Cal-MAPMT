@@ -58,5 +58,6 @@ for i=1:8
     end
 end
 old=dataArray{:,9};%Get Data for old PMT
+old=old-mean(old(1:100));
 [Acrop,cropOld]= crop(A,EO,old);%Apply cropping
 

@@ -5,8 +5,8 @@ function [cutCube,oldCube] = cut(Acrop,cropOld)
 cutCube=[];
 oldCube=[];
 for i=1:length(pks)
-   eval(['cutCube.A' int2str(i) '=Acrop(:,:,pks(i)-100:pks(i)+100)']); 
-   eval(['oldCube.A' int2str(i) '=cropOld(pks(i)-100:pks(i)+100)']); 
+   eval(['cutCube.A' int2str(i) '=Acrop(:,:,pks(i)-75:pks(i)+75)']); 
+   eval(['oldCube.A' int2str(i) '=cropOld(pks(i)-75:pks(i)+75)']); 
 
    
 end

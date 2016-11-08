@@ -11,7 +11,9 @@ function  maxRecon( cpp, oldData, data )
     for i=1:length(cpp(1,1,:))
         %Searches for first max amplitude PMT pixel for peak
         [row col]=find(max(max(cpp(:,:,i)))==cpp(:,:,i),1,'first');
-        sumA=sumA+squeeze(data(col,row,:));%adds this to sum
+        %addDat=guassianFitter(squeeze(data(col,row,:)), oldData);
+        %sumA=sumA+addDat(1:length(oldData));%adds this to sum
+        sumA=sumA+squeeze(data(col,row,:));
         hold all
     end
     
