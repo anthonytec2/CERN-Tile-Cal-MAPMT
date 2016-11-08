@@ -1,6 +1,6 @@
 function [cutCube,oldCube] = cut(Acrop,cropOld)
 %Function to Cut data into only interestin Regions
-[loc,pks]=findpeaks(cropOld,'MinPeakHeight',400,'MinPeakDistance',60);%WIDTH
+[loc,pks]=findpeaks(cropOld,'MinPeakHeight',400,'MinPeakDistance',80);%WIDTH
 %Finds the large peaks in the regions
 cutCube=[];
 oldCube=[];

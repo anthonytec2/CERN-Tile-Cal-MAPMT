@@ -1,15 +1,21 @@
 function bestReconstruction(cpp, oldData, data)
-[row col]=find(cpp(:,:,1)>0.1);
-sumA=squeeze(data(row(1),col(1),:));
+ampThresh=30;
+ratioThresh=.15;
+[row col]=find(cpp(:,:,1)>ratioThresh);
+sumA=squeeze(data(col(1),row(1),:));
 if(length(row)>1)
     for i=1:length(row)
-        sumA=sumA+squeeze(data(row(i),col(i),:));
+        if(max(squeeze(data(col(i),row(i),:)))>ampThresh)
+            sumA=sumA+squeeze(data(col(i),row(i),:));
+        end
     end
 end
 for z=2:length(cpp(1,1,:))
-[row col]=find(cpp(:,:,1)>0.1);
+[row col]=find(cpp(:,:,z)>ratioThresh);
     for i=1:length(row)
-        sumA=sumA+squeeze(data(row(i),col(i),:));
+        if(max(squeeze(data(col(i),row(i),:)))>ampThresh)
+        sumA=sumA+squeeze(data(col(i),row(i),:));
+        end
     end
 end
 subplot(1,2,1)

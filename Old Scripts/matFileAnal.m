@@ -1,5 +1,5 @@
 function matFileAnal(name)
-load(['Data/cs' int2str(name) '.mat']);
+load(['cs' int2str(name) '.mat']);
 %plotCuts(cutCube)
 %figure
 for i=1:length(struct2cell(cutCube))
@@ -32,6 +32,6 @@ for i=1:length(struct2cell(cutCube))
 %   end
 end
 
-   save(['Data/cs' int2str(name) '.mat']);
+   save(['cs' int2str(name) '.mat']);
 
 
