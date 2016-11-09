@@ -52,6 +52,7 @@ A=zeros(8,8,length(dataArray{:, 1}));%Allocating 8x8 Array
 for i=1:8
     for j=1:8
         if mapping(i,j)==0%Check if nothing in mapping 
+       
         else
         A(i,j,:)=dataArray{:,mapping(i,j)+1}-mean(dataArray{:,mapping(i,j)+1}(1:100));%Remove Pedestal(First 100 Samples) and Assign to A pixel location
         end
