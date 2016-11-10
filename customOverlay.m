@@ -17,7 +17,7 @@ labels={'Single Anode PMT'};%Creates labels array for legened
         z=plot(squeeze(data(col,row,:)),'LineWidth',2);%plot max pixel         
         holdData(i)=max(z.YData(pks(i)-2:pks(i)+2))+15;
         colorHolder=[colorHolder, z.Color];
-        labels=[labels ['New PMT Pixel: ' int2str(row) ',' int2str(col) ]];%add pixel to max array
+        labels=[labels ['MA-PMT Pixel: ' int2str(row) ',' int2str(col) ]];%add pixel to max array
         writeText=[writeText row , col ];
         %text(pks(i),max(loc),[int2str(row) ',' int2str(col) ],'FontSize',16,'color',z.Color);%Creates labels for max pixel on plot
         %line([pks(i) pks(i)],[max(z.YData) (3000)],'color',z.Color,'LineStyle','--','LineWidth',2);

@@ -16,12 +16,13 @@ end
 thresh=thresh(~(isnan(error)));
 error=error(~(isnan(error)));
 figure
+subplot(1,2,1)
 stem(thresh,error);
 xlabel('Threshold to Include Higher is stricter')
 ylabel('Error Ratio');
 title('Error Curve');
 smallErrorY=find(min(abs(error))==abs(error),1,'first');
-figure
+subplot(1,2,2)
 plot(sumA(smallErrorY,:));
 hold all
 plot(sumB(smallErrorY,:));

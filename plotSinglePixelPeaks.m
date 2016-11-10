@@ -1,4 +1,4 @@
-function  [sumB]=plotSinglePixelPeaks(cpp, oldData, data )
+function  [sumB]=plotSinglePixelPeaks(cpp, oldData, data,thresh )
 
 [loc pks]=findpeaks(oldData,'MinPeakHeight',400,'MinPeakDistance',6);
 trig=1:length(oldData);
@@ -10,7 +10,7 @@ hold all
 sumA=zeros(1,length(oldData));
 sumB=zeros(1,length(oldData));
 for i=1:length(squeeze(cpp(1,1,:)))
-    [row, col]=find(cpp(:,:,i)>.2);
+    [row, col]=find(cpp(:,:,i)>thresh);
     for j=1:length(col)
        pix= squeeze(data(col(j),row(j),:));
        partial=zeros(1,length(oldData));
