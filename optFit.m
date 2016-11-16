@@ -1,18 +1,22 @@
-function[error, alpha, fitF] =optFit(data, oldData)
-MaxTime=60*2;
+function[ alpha, fitF] =optFit(data, oldData)
+MaxIter=100000;
 alpha=ones(1,64);
 lb = ones(1,64)*-10;
 ub = ones(1,64)*10;
-
- 
-   %opt=saoptimset('simulannealbnd');
-   %opt.Display='diagnose';
-   %opt.InitialTemperature=[100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100];
-   %opt.MaxTime=MaxTime;
-   %opt.ReannealInterval=6;
-%[alpha,fval,exitFlag,output] = simulannealbnd(@(alpha)calcError(alpha, oldData,data),alpha,lb,ub,opt);
-[alpha,fval,exitflag,output] = particleswarm(@(alpha)calcError(alpha, oldData,data),64,lb,ub); 
+%options = optimset('PlotFcns',@optimplotfval);
+% [alpha,fval,exitflag,output] = fminsearch(@(alpha)calcError(alpha, oldData,data),alpha,options)
+   opt=saoptimset('simulannealbnd');
+   opt.Display='diagnose';
+   opt.InitialTemperature=[100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100];
+   opt.MaxIter=MaxIter;
+   opt.ReannealInterval=3;
+[alpha,fval,exitFlag,output] = simulannealbnd(@(alpha)calcError(alpha, oldData,data),alpha,lb,ub,opt);
+%options = optimoptions('particleswarm');
+%options.Display='iter';
+%options.UseParallel='true';
+%[alpha,fval,exitflag,output] = particleswarm(@(alpha)calcError(alpha, oldData,data),64,lb,ub); 
 [sumA]=hypo(alpha, data);
+fitF=sumA;
 figure
 %subplot(1,2,1)
 %plot(1:100)

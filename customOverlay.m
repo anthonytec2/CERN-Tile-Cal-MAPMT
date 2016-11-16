@@ -8,7 +8,7 @@ cla reset
 holdData=[];
 labels={'Single Anode PMT'};%Creates labels array for legened
     plot(oldData,'Color',[0,0,0],'LineWidth',3);
-    [loc pks]=findpeaks(oldData,'MinPeakHeight',400,'MinPeakDistance',6);% find all the peaks in the data
+    [loc pks]=findpeaks(oldData,'MinPeakHeight',250,'MinPeakDistance',6);% find all the peaks in the data
     hold all;%Overlay all the plots found
     writeText=[];
     colorHolder=[];

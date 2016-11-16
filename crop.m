@@ -5,7 +5,7 @@ function[aCrop,cropOld]= crop(A,EO,old)
 aCrop=[];%develop crop array
 if(EO==1)
     %if even crops based on max peaks found the last and first peaks
-   [loc pk]=findpeaks(old,'MinPeakHeight',700,'MinPeakDistance',60);
+   [loc pk]=findpeaks(old,'MinPeakHeight',600,'MinPeakDistance',60);
     aCrop=A(:,:,(pk(1)-700):(pk(end)+400));
     cropOld=old((pk(1)-700):(pk(end)+400));
 else
