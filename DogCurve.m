@@ -28,3 +28,8 @@ hold all
 plot(sumB(smallErrorY,:));
 plot(sumA(smallErrorY,:)-sumB(smallErrorY,:));
 muA=mean(sumA(smallErrorY,:)-sumB(smallErrorY,:));
+
+figure
+xlabel('Triggers')
+ylabel('ADC Counts');
+title('Repea');

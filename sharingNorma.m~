@@ -1,0 +1,12 @@
+function [sharing] = sharingNorma( data, oldData, cpp )
+sharing=cpp*0;
+[loc pks]=findpeaks(oldData,'MinPeakHeight',250,'MinPeakDistance',6);% find all the peaks in the data
+for i=1:length(squeeze(cpp(1,1,:)))
+    [row col]=find(cpp(:,:,i)>0);
+    sumC=sum(sum(max(squeeze(data(row,col,pks(i)-5:pks(i+5))),3)));
+    
+end
+
+
+end
+

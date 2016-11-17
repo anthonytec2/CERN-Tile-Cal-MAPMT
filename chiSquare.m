@@ -1,4 +1,4 @@
 function[error]= chiSquare(exp,the)
 
-error=sum((((the-exp).^2)/(the-exp))/(length(exp(1,1,:))));
+error=sum(((exp-the).^2)./(the));
 end

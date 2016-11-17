@@ -7,12 +7,12 @@ close all
 
 load('Data/cs10290.mat')
 subplot(2,2,2)
-plotSinglePixelPeaks(cpp.p2,oldCube.A2,cutCube.A2);
+plotSinglePixelPeaks(cpp.p2,oldCube.A2,cutCube.A2,.4);
 title('Slow Speed')
 clear all
 load('Data/cs10292.mat')
 subplot(2,2,3)
-plotSinglePixelPeaks(cpp.p2,oldCube.A2,cutCube.A2);
+plotSinglePixelPeaks(cpp.p2,oldCube.A2,cutCube.A2,.4);
 title('Reporduability')
 clear all
 load('Data/cs10294.mat')
