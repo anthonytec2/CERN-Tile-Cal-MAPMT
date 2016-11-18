@@ -13,3 +13,4 @@ xlabel('Triggers')
 ylabel('ADC Counts')
 title('320: Data Reduction from 64 Channels to only 16 function fo the peak');
 set(gca,'fontsize',15);
+optFitLeastSquaresPeaks(dataPeaks,oldCube.A2)
