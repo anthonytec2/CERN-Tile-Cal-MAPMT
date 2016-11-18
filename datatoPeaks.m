@@ -11,10 +11,3 @@ for i=1:length(squeeze(shar(1,1,:)))
 end
 
 end
-
-figure
-for i=1:9
-    plot(dataPeaks(i,:));
-    hold all
-end
-plot(oldCube.A2)
