@@ -19,16 +19,16 @@ hold all
 plot(oldData,'linewidth',1.5);
 plot(sumA-oldData,'linewidth',1.5);
 legend('Hypothesis','Single Anode PMT', 'Error');
-%[loc pks]=findpeaks(oldData,'MinPeakHeight',800,'MinPeakDistance',6);
-%[locB pksB]=findpeaks(sumA,'MinPeakHeight',800,'MinPeakDistance',6);
-%rmsAr=sqrt((loc-locB).^2);
-%text(20,500,'Mean of Differenece=>','fontsize',13)
-%mu=mean(rmsAr);
-%text(125,500,num2str(mean(rmsAr)),'fontsize',13)
-%text(20,200,'RMS of Differenece=>','fontsize',13)
+[loc pks]=findpeaks(oldData,'MinPeakHeight',800,'MinPeakDistance',6);
+[locB pksB]=findpeaks(sumA,'MinPeakHeight',800,'MinPeakDistance',6);
+rmsAr=sqrt((loc-locB).^2);
+text(20,500,'Mean of Differenece=>','fontsize',13)
+mu=mean(rmsAr);
+text(125,500,num2str(mean(rmsAr)),'fontsize',13)
+text(20,200,'RMS of Differenece=>','fontsize',13)
 
-%text(125,200,num2str(sqrt(sum((rmsAr-mu).^2)/(length(rmsAr)-1))),'fontsize',13);
-%text(250,500,['Mean Error:' num2str(mean(sumA-oldData))],'fontsize',13);
+text(125,200,num2str(sqrt(sum((rmsAr-mu).^2)/(length(rmsAr)-1))),'fontsize',13);
+text(250,500,['Mean Error:' num2str(mean(sumA-oldData))],'fontsize',13);
 %chiS=chiSquare(sumA,oldData);
 %text(225,800,['Chi^2 Error:' num2str(chiS)],'fontsize',13);
 

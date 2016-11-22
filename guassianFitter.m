@@ -8,7 +8,7 @@ function [f] = guassianFitter(pixelActive, oldData)
 %trigger=((1:length(oldData))*mL)';
 trigger=(1:length(oldData))';
 f=fit(trigger,pixelActive,'gauss2');
-plot(f,trigger,pixelActive);
+%plot(f,trigger,pixelActive);
 
 %y=A0*(GSh*exp(-0.5*()))
 end

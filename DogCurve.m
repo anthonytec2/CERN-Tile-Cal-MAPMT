@@ -1,9 +1,9 @@
-load('Data/cs10290.mat')
+load('Data/cs10278.mat')
 thresh=(1:100)./100;
 for i=1:length(thresh)
     [sumB(i,:)]=plotSinglePixelPeaks(cpp.p2,oldCube.A2,cutCube.A2,thresh(i) );
 end
-load('Data/cs10292.mat')
+load('Data/cs10280.mat')
 for i=1:length(thresh)
     [sumA(i,:)]=plotSinglePixelPeaks(cpp.p2,oldCube.A2,cutCube.A2,thresh(i) );
 end

@@ -15,6 +15,7 @@ subplot(2,2,3)
 plotSinglePixelPeaks(cpp.p2,oldCube.A2,cutCube.A2,.4);
 title('Reporduability')
 clear all
+
 load('Data/cs10294.mat')
 subplot(2,2,4)
 plotSinglePixelPeaks(cpp.p2,oldCube.A2,cutCube.A2);
