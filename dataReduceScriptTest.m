@@ -1,4 +1,4 @@
-load('Data/cs10316.mat');
+load('Data/cs10334.mat');
 sharing=sharingNorma(cutCube.A2,oldCube.A2,cpp.p2);
 dataPeaks=datatoPeaks(cutCube.A2,oldCube.A2,sharing);
 figure
