@@ -18,9 +18,9 @@ end
   imagesc(cppLin);
  xlabel('ADC Channel Number');
  ylabel('Peak Number');
- title('Plot of Active Pixels during Single Anode PMT Peaks');
+ title('Active Pixels during Single Anode PMT Peaks');
  colorbar
 
- set(gca,'fontsize',14);
+ set(gca,'fontsize',24);
 end
 
