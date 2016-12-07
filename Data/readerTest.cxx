@@ -11,7 +11,8 @@ cout<<ss.str()<<endl;
 myfile.open(ss.str());
 TFile *f = TFile::Open(TString(sW.str()));
 f->cd("RawData");
-TTreeReader myReader("DAQ.Data.EBA66");
+TTreeReader myReader("DAQ.Data.LBC66
+");
 TTreeReaderValue<unsigned short> trigger(myReader, "trigger");
 TTreeReaderArray<unsigned short> datas(myReader,"data[48].data");
 while(myReader.Next()){
