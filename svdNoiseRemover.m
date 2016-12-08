@@ -1,3 +1,5 @@
+%Attempt to peform dimension reduction on data to remove noise
+%Not much noise in signal therefore not really useuful
 load('Data/cs10318.mat')
 data=reshape(cutCube.A2,[64,281]);
 [U S V]=svd(data);

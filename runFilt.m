@@ -1,5 +1,4 @@
-
-
+%Runs the frequnecy removal on a data set
 for i=1:8
     for j=1:8
         if(max(squeeze(cutCube.A2(i,j,:)))>0)

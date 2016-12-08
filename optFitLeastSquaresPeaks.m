@@ -1,4 +1,5 @@
-%THIS ALGORITHM SHOULD BE USED
+%THIS ALGORITHM SHOULD BE USED PERFORM SAME AS LEAST SQUARES EXCEPT ONLY
+%FOR REDUCED DATA SEE COMMENT PREVIOUSLY
 function optFitLeastSquaresPeaks(data, oldData)
 %A=reshape(data, [64, length(squeeze(data(1,1,:)))])';%A
 %Y=oldData;

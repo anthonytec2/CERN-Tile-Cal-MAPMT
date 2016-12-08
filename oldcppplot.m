@@ -1,6 +1,7 @@
 function [cppLin]=oldCPPplot(cpp,filename)
 %Plots CPP(X,Y,Pk#) into cppLin(CHannel Num,Pk#)
 %Imports mapping from test file and then
+%Filename is the name of the mapping file used for importing data
 %performs linear conversion from each channel 
 mapping=importfileMapping([filename '.txt']);
 cppLin=zeros(length(squeeze(cpp(1,1,:))),48);

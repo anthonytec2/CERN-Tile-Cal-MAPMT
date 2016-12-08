@@ -1,5 +1,7 @@
 function  [sumB]=plotSinglePixelPeaks(cpp, oldData, data,thresh)
-
+%Creates a sum using only the strongest pixels in the data
+%cpp(X,Y,Pk), OldData(X,Y,Trigger), data(X,Y,Trigger) 
+%Thesh is the value above in cpp you would like the pixels to be added
 [loc pks]=findpeaks(oldData,'MinPeakHeight',400,'MinPeakDistance',6);
 trig=1:length(oldData);
 %plot(trig,oldData);
@@ -9,15 +11,15 @@ trig=1:length(oldData);
 %hold all
 sumA=zeros(1,length(oldData));
 sumB=zeros(1,length(oldData));
-for i=1:length(squeeze(cpp(1,1,:)))
+for i=1:length(squeeze(cpp(1,1,:)))%FINDS ALL VALUES IN CPP ABOVE THRESH
     [row, col]=find(cpp(:,:,i)>thresh);
     for j=1:length(col)
        pix= squeeze(data(col(j),row(j),:));
-       partial=zeros(1,length(oldData));
-       partial(pks(i)-5:pks(i)+5)=pix(pks(i)-5:pks(i)+5);
+       partial=zeros(1,length(oldData));%ADD THESE VALUES TO A SUM
+       partial(pks(i)-5:pks(i)+5)=pix(pks(i)-5:pks(i)+5);%CREATES  A CUT SUM ONLY OF PEAK
        %plot(pix);
-       sumA=sumA+partial;
-       sumB=sumB+pix';
+       sumA=sumA+partial;%ADD CUT PEAKS SUM 
+       sumB=sumB+pix';%ADD FULL SUM 
        %plot(sumA);
        %plot(pks(i)-5:pks(i)+5,pix(pks(i)-5:pks(i)+5))
     end

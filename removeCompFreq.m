@@ -1,4 +1,6 @@
 function [realSig]=removeCompFreq(q,freqRemove)
+%EXample script of trying to remove a particluar frequency component in
+%data
         mag=abs(fft(q));
         phase=angle(fft(q));
         for i=1:length(freqRemove)
